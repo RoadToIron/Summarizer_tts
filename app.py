@@ -1,6 +1,7 @@
 from transformers import pipeline
 import gradio as gr
 import tensorflow as tf
+import torch
 
 #load the gpt model
 #talker = pipeline("text-to-speech", model="microsoft/VibeVoice-1.5B")

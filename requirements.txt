@@ -2,3 +2,4 @@ tensorflow == 2.20.0
 gradio == 5.46.1
 transformers == 4.56.2
 tf-keras == 2.20.0
+torch ==2.2.0
