@@ -28,9 +28,9 @@ jobs:
           fetch-depth: 0
       - name:  Add remote
         env:
-          HF: ${{  secrets.hf  }}
+          HF: ${{  secrets.HUGGING_FACE  }}
         run: git remote add space https:https://huggingface.co/spaces/mercophobia/Summarizer_with_tts
       - name: push to hub
         env:
-          HF: ${{ secrets.hf }}
+          HF: ${{ secrets.HUGGING_FACE }}
         run: git push --force https://huggingface.co/spaces/mercophobia/Summarizer_with_tts
