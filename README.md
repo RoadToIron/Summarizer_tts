@@ -1,2 +1,8 @@
-# Summarizer_tts
-this is a porject about a text to speach summarizer
+title: {{summarizer}}
+emoji: {{😡}}
+colorFrom: {{purple}}
+colorTo: {{indigo}}
+sdk: {{gradio}}
+sdk_version: "{{5.46.1}}"
+app_file: summarizer.py
+pinned: false
