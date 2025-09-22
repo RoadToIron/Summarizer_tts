@@ -3,17 +3,20 @@ import gradio as gr
 import tensorflow as tf
 
 #load the gpt model
-talker = pipeline("text-to-speech", model="facebook/fastspeech2-en-ljspeech")
+talker = pipeline("text-to-speech", model="espnet/fastspeech2_conformer_hifigan")
 answerer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 def summarize_and_tts(text):
     # Summarize the input text
-    summary = answerer(text, max_length=50, min_length=25, do_sample=False)[0][text]
+    if not text:
+        return "please enter your text >:(", None
+    else:
+        summary = answerer(text, max_length=100, min_length=0, do_sample=False)[0][text]
     
-    # Convert the summary to speech
-    tts_output = talker(summary)
+        # Convert the summary to speech
+        tts_output = talker(summary)
     
-    return summary, tts_output['audio']
+        return summary, tts_output['audio']
 
 # the Gradio Interface
 with gr.Blocks() as demo:
