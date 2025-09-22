@@ -29,7 +29,7 @@ jobs:
       - name:  Add remote
         env:
           HF: ${{  secrets.hf  }}
-        run: gitremote add space https:https://huggingface.co/spaces/mercophobia/Summarizer_with_tts
+        run: git remote add space https:https://huggingface.co/spaces/mercophobia/Summarizer_with_tts
       - name: push to hub
         env:
           HF: ${{ secrets.hf }}
