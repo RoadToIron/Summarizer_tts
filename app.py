@@ -27,6 +27,6 @@ with gr.Blocks() as demo:
     summary_output = gr.Textbox(label="Summary")
     #audio_output = gr.Audio(label="Text-to-Speech Output", type="numpy")
     submit_button = gr.Button("Submit")
-    submit_button.click(fn=summarize,inputs=text_input, output=summary_output)
+    submit_button.click(fn=summarize,inputs=text_input, outputs=summary_output)
 
 demo.launch()
